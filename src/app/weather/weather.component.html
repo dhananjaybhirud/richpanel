@@ -1,5 +1,5 @@
 <div class="main container">
-  <div class="row">
+  <div class="row mb-3">
     <div class="col-12">
       <div class="input-group input-group-lg shadow rounded custom-input-group">
         <div class="input-group-prepend">
@@ -16,5 +16,34 @@
       </div>
     </div>
   </div>
+  <div class="row">
+    <div class="col-12">
+      <ngb-tabset >
+        <ngb-tab *ngFor="let item of weatherData['daily']">
+          <ng-template ngbTabTitle>
+            <div class="week">
+              <div class="day">
+                  {{dt | date : 'EEEE' | slice:0:3}}
+              </div>
+              <div class="temp">
+                <strong>{{item.feels_like.day - 273.15 | number: '2.0-0'}}<sup>0</sup></strong>
+                <span>{{item.dew_point - 273.15 | number: '2.0-0'}}<sup>0</sup></span>
+              </div>
+              <div class="image">
+                <img src="./../../assets/Sunny.svg" height="30">
+              </div>
+              <div class="looks">
+                Sunny
+              </div>
+            </div>
+          </ng-template>
+          <ng-template ngbTabContent>
+            fsdfsdf
+          </ng-template>
+        </ngb-tab>
+      </ngb-tabset>
+    </div>
+  </div>
 </div>
-{{lat + '+' + lng}}
+
+

@@ -9,3 +9,30 @@
     border:0;
   }
 }
+
+.week{
+  text-align: center;
+  color: #000;
+  .day{
+    font-weight: 700;
+  }
+  .temp{
+    &>*{
+      margin: 0 3px;
+    }
+  }
+}
+
+::ng-deep .nav-tabs{
+  border-bottom: 0;
+  .nav-link{
+    padding: 0 5px;
+    &.active{
+      background-color: #fffdf5;
+      border: 1px solid #03a9f4;
+    }
+  }
+}
+::ng-deep .nav-tabs .nav-link.active{
+
+}
