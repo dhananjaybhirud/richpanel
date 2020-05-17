@@ -18,7 +18,28 @@
   </div>
   <div class="row">
     <div class="col-12">
-      <ngb-tabset >
+      <ul role="tablist" class="justify-content-start nav nav-tabs">
+        <li class="nav-item" *ngFor="let item of weatherData['daily']; index as i">
+          <a class="nav-link" [class.active]="i === activeData" (click)="showSelectedData(i)">
+            <div class="week">
+              <div class="day">
+                  {{dt | date : 'EEEE' | slice:0:3}}
+              </div>
+              <div class="temp">
+                <strong>{{item.feels_like.day - 273.15 | number: '2.0-0'}}<sup>o</sup></strong>
+                <span>{{item.dew_point - 273.15 | number: '2.0-0'}}<sup>o</sup></span>
+              </div>
+              <div class="image">
+                <img src="./../../assets/Sunny.svg" height="30">
+              </div>
+              <div class="looks">
+                Sunny
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+      <!-- <ngb-tabset >
         <ngb-tab *ngFor="let item of weatherData['daily']">
           <ng-template ngbTabTitle>
             <div class="week">
@@ -41,7 +62,7 @@
             fsdfsdf
           </ng-template>
         </ngb-tab>
-      </ngb-tabset>
+      </ngb-tabset> -->
     </div>
   </div>
 
@@ -49,11 +70,20 @@
     <div class="card-body">
       <h4 class="card-title">
         26<sup>o</sup>C
-        <img src="./../../assets/Sunny.svg" height="60">
+        <img src="./../../assets/Sunny.svg" height="40">
       </h4>
-      <p class="card-text">
-        Graph here Graph here Graph here Graph here Graph here Graph here
-      </p>
+
+      <div style="display: block;">
+        <canvas baseChart width="100%" height="60" #chart1
+          [datasets]="lineChartData"
+          [labels]="lineChartLabels"
+          [colors]="lineChartColors"
+          [legend]="lineChartLegend"
+          [chartType]="lineChartType"
+          [plugins]="lineChartPlugins">
+        </canvas>
+      </div>
+
       <div class="row">
         <div class="col-6">
           <div class="chips">
