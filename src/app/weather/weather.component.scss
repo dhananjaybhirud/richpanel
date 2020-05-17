@@ -25,6 +25,10 @@
 
 ::ng-deep .nav-tabs{
   border-bottom: 0;
+  flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 0 10px;
   .nav-link{
     padding: 0 5px;
     &.active{
@@ -33,6 +37,15 @@
     }
   }
 }
-::ng-deep .nav-tabs .nav-link.active{
 
+
+.chips{
+  font-weight: 700;
+  background-color: #f5faff;
+  padding: 10px;
+}
+
+.card-title{
+  font-weight: 700;
+    font-size: 60px;
 }

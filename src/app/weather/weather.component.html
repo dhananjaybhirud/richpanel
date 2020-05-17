@@ -26,8 +26,8 @@
                   {{dt | date : 'EEEE' | slice:0:3}}
               </div>
               <div class="temp">
-                <strong>{{item.feels_like.day - 273.15 | number: '2.0-0'}}<sup>0</sup></strong>
-                <span>{{item.dew_point - 273.15 | number: '2.0-0'}}<sup>0</sup></span>
+                <strong>{{item.feels_like.day - 273.15 | number: '2.0-0'}}<sup>o</sup></strong>
+                <span>{{item.dew_point - 273.15 | number: '2.0-0'}}<sup>o</sup></span>
               </div>
               <div class="image">
                 <img src="./../../assets/Sunny.svg" height="30">
@@ -42,6 +42,42 @@
           </ng-template>
         </ngb-tab>
       </ngb-tabset>
+    </div>
+  </div>
+
+  <div class="card shadow">
+    <div class="card-body">
+      <h4 class="card-title">
+        26<sup>o</sup>C
+        <img src="./../../assets/Sunny.svg" height="60">
+      </h4>
+      <p class="card-text">
+        Graph here Graph here Graph here Graph here Graph here Graph here
+      </p>
+      <div class="row">
+        <div class="col-6">
+          <div class="chips">
+            <div class="title">
+              Pressure
+            </div>
+            <div class="des">
+              1013 hpa
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <div class="chips">
+            <div class="title">
+              Humidity
+            </div>
+            <div class="des">
+              93 %
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <a href="#!" class="btn btn-primary">Go somewhere</a> -->
     </div>
   </div>
 </div>
